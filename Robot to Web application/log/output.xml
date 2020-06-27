@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200626 23:10:39.513" rpa="false">
+<suite id="s1" name="Login Test" source="D:\Pessoal\treinamentos apos 25 06 2020\Python\robot_framework\Robot to Web application\Tests\login_test.robot">
+<test id="s1-t1" name="Login with good credentials">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:10:39.752" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:10:39.752" endtime="20200626 23:10:44.238"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:39.751" endtime="20200626 23:10:44.238"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:44.240" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:10:44.238" endtime="20200626 23:10:44.673"></status>
+</kw>
+<kw name="Perform Login">
+<arguments>
+<arg>stark</arg>
+<arg>jarvis!</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:44.674" level="INFO">Typing text 'stark' into text field 'id:userId'.</msg>
+<status status="PASS" starttime="20200626 23:10:44.674" endtime="20200626 23:10:44.786"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:44.786" level="INFO">Typing text 'jarvis!' into text field 'css:input[name="password"]'.</msg>
+<status status="PASS" starttime="20200626 23:10:44.786" endtime="20200626 23:10:44.889"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:44.890" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:10:44.889" endtime="20200626 23:10:45.651"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:44.674" endtime="20200626 23:10:45.651"></status>
+</kw>
+<kw name="Verify Logged Area">
+<arguments>
+<arg>Olá, Tony Stark. Você acessou a área logada!\n×</arg>
+</arguments>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:10:45.666" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7ab74349e59cdabb571d1dbc1407b96d", element="162a4593-b71c-4f09-9673-866593dfdfa7")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:45.653" endtime="20200626 23:10:45.666"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:10:45.680" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7ab74349e59cdabb571d1dbc1407b96d", element="a6057c87-e814-490e-be42-7766c7a095b9")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:45.666" endtime="20200626 23:10:45.680"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${welcome_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:10:45.691" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7ab74349e59cdabb571d1dbc1407b96d", element="0944027e-133b-4403-b724-ea02e029d246")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:45.680" endtime="20200626 23:10:45.692"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Área Logada</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:45.692" endtime="20200626 23:10:45.705"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Bem-vindo à área logada. Quando terminar, clique em logout.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:45.705" endtime="20200626 23:10:45.720"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:45.720" endtime="20200626 23:10:45.733"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:45.652" endtime="20200626 23:10:45.733"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:10:46.083" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-89.png"&gt;&lt;img src="selenium-screenshot-89.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:45.734" endtime="20200626 23:10:46.083"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:10:46.083" endtime="20200626 23:10:48.193"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:45.734" endtime="20200626 23:10:48.193"></status>
+</kw>
+<tags>
+<tag>login_good_credentials</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:10:39.750" endtime="20200626 23:10:48.194" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Login with wrong password">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:10:48.197" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:10:48.197" endtime="20200626 23:10:53.365"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:48.196" endtime="20200626 23:10:53.365"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:53.366" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:10:53.366" endtime="20200626 23:10:53.787"></status>
+</kw>
+<kw name="Perform Login">
+<arguments>
+<arg>stark</arg>
+<arg>wrong_password</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:53.788" level="INFO">Typing text 'stark' into text field 'id:userId'.</msg>
+<status status="PASS" starttime="20200626 23:10:53.787" endtime="20200626 23:10:53.890"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:53.891" level="INFO">Typing text 'wrong_password' into text field 'css:input[name="password"]'.</msg>
+<status status="PASS" starttime="20200626 23:10:53.891" endtime="20200626 23:10:54.005"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:10:54.005" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:10:54.005" endtime="20200626 23:10:54.471"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:53.787" endtime="20200626 23:10:54.471"></status>
+</kw>
+<kw name="Verify Login Error">
+<arguments>
+<arg>Senha é invalida!\n×</arg>
+</arguments>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:10:54.487" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="da0283372a31e7c1c27e232ef9caa4e0", element="3934a782-ec84-4a40-9928-08437fdea60d")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:54.473" endtime="20200626 23:10:54.487"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:10:54.498" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="da0283372a31e7c1c27e232ef9caa4e0", element="8d149296-467d-44f0-bd21-12139ae22da6")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:54.487" endtime="20200626 23:10:54.498"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:54.498" endtime="20200626 23:10:54.513"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:54.513" endtime="20200626 23:10:54.526"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:54.473" endtime="20200626 23:10:54.527"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${login_error_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:10:54.539" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="da0283372a31e7c1c27e232ef9caa4e0", element="f7b4d217-12e9-47a9-bb49-c80194e4a714")&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:54.527" endtime="20200626 23:10:54.539"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:10:54.539" endtime="20200626 23:10:54.553"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:54.472" endtime="20200626 23:10:54.554"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:10:54.898" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-90.png"&gt;&lt;img src="selenium-screenshot-90.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:10:54.555" endtime="20200626 23:10:54.898"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:10:54.898" endtime="20200626 23:10:57.274"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:54.554" endtime="20200626 23:10:57.274"></status>
+</kw>
+<tags>
+<tag>login_wrong_password</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:10:48.195" endtime="20200626 23:10:57.275" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Login with unexistent user">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:10:57.278" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:10:57.277" endtime="20200626 23:11:01.286"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:10:57.277" endtime="20200626 23:11:01.286"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:01.287" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:01.287" endtime="20200626 23:11:01.704"></status>
+</kw>
+<kw name="Perform Login">
+<arguments>
+<arg>404_username</arg>
+<arg>jarvis!</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:01.706" level="INFO">Typing text '404_username' into text field 'id:userId'.</msg>
+<status status="PASS" starttime="20200626 23:11:01.705" endtime="20200626 23:11:01.820"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:01.821" level="INFO">Typing text 'jarvis!' into text field 'css:input[name="password"]'.</msg>
+<status status="PASS" starttime="20200626 23:11:01.821" endtime="20200626 23:11:01.919"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:01.920" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:11:01.920" endtime="20200626 23:11:02.400"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:01.705" endtime="20200626 23:11:02.400"></status>
+</kw>
+<kw name="Verify Login Error">
+<arguments>
+<arg>O usuário informado não está cadastrado!\n×</arg>
+</arguments>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:11:02.415" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="153d5d0760a4ea7e422632f7374738ac", element="462c9de3-38c8-4624-8b88-b7ea8d2504f0")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:02.402" endtime="20200626 23:11:02.415"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:11:02.428" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="153d5d0760a4ea7e422632f7374738ac", element="9d50ffd0-cdac-4991-900e-7f0783c6352e")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:02.415" endtime="20200626 23:11:02.428"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:02.428" endtime="20200626 23:11:02.440"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:02.440" endtime="20200626 23:11:02.452"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:02.402" endtime="20200626 23:11:02.453"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${login_error_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:11:02.463" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="153d5d0760a4ea7e422632f7374738ac", element="e32e62c2-8361-45b7-a0ec-36d72fe5a0b0")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:02.453" endtime="20200626 23:11:02.463"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:02.463" endtime="20200626 23:11:02.475"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:02.401" endtime="20200626 23:11:02.475"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:02.830" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-91.png"&gt;&lt;img src="selenium-screenshot-91.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:02.476" endtime="20200626 23:11:02.830"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:02.830" endtime="20200626 23:11:04.914"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:02.476" endtime="20200626 23:11:04.914"></status>
+</kw>
+<tags>
+<tag>login_wrong_username</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:10:57.277" endtime="20200626 23:11:04.915" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Login with empty password">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:11:04.918" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:11:04.917" endtime="20200626 23:11:09.305"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:04.917" endtime="20200626 23:11:09.305"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:09.306" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:09.306" endtime="20200626 23:11:09.729"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>stark</arg>
+</arguments>
+<msg timestamp="20200626 23:11:09.730" level="INFO">Typing text 'stark' into text field 'id:userId'.</msg>
+<status status="PASS" starttime="20200626 23:11:09.729" endtime="20200626 23:11:09.821"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:09.822" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:11:09.822" endtime="20200626 23:11:10.319"></status>
+</kw>
+<kw name="Verify Login Error">
+<arguments>
+<arg>Senha é invalida!\n×</arg>
+</arguments>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:11:10.332" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="98e6fa117ea8e1c7b6cebc8c7176eabc", element="c0080d10-885e-4bec-adec-1664d9fe086b")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:10.320" endtime="20200626 23:11:10.332"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:11:10.343" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="98e6fa117ea8e1c7b6cebc8c7176eabc", element="85dcfd4f-bb1e-47e1-bd73-3b6384efba16")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:10.332" endtime="20200626 23:11:10.343"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:10.343" endtime="20200626 23:11:10.358"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:10.358" endtime="20200626 23:11:10.371"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:10.320" endtime="20200626 23:11:10.371"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${login_error_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:11:10.382" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="98e6fa117ea8e1c7b6cebc8c7176eabc", element="03d2e57c-fadb-4db8-87bf-ea5826b51d10")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:10.371" endtime="20200626 23:11:10.382"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:10.382" endtime="20200626 23:11:10.395"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:10.320" endtime="20200626 23:11:10.395"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:10.747" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-92.png"&gt;&lt;img src="selenium-screenshot-92.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:10.396" endtime="20200626 23:11:10.747"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:10.748" endtime="20200626 23:11:12.845"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:10.396" endtime="20200626 23:11:12.846"></status>
+</kw>
+<tags>
+<tag>login_empty_password</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:11:04.916" endtime="20200626 23:11:12.847" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Login with empty password">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:11:12.859" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:11:12.858" endtime="20200626 23:11:16.897"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:12.857" endtime="20200626 23:11:16.897"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:16.898" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:16.898" endtime="20200626 23:11:17.320"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>jarvis!</arg>
+</arguments>
+<msg timestamp="20200626 23:11:17.320" level="INFO">Typing text 'jarvis!' into text field 'css:input[name="password"]'.</msg>
+<status status="PASS" starttime="20200626 23:11:17.320" endtime="20200626 23:11:17.417"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:17.418" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:11:17.418" endtime="20200626 23:11:17.882"></status>
+</kw>
+<kw name="Verify Login Error">
+<arguments>
+<arg>O usuário informado não está cadastrado!\n×</arg>
+</arguments>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:11:17.895" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="37bf1e33ad4d329041822caa1ecf3f7b", element="372aa5c6-a5dc-4e10-b858-051209a44479")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:17.883" endtime="20200626 23:11:17.895"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:11:17.909" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="37bf1e33ad4d329041822caa1ecf3f7b", element="12a6c400-b22f-4c16-bb3e-f8edb1f47e93")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:17.896" endtime="20200626 23:11:17.909"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:17.909" endtime="20200626 23:11:17.924"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:17.925" endtime="20200626 23:11:17.939"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:17.883" endtime="20200626 23:11:17.939"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${login_error_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:11:17.951" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="37bf1e33ad4d329041822caa1ecf3f7b", element="8d88030a-1fe2-40a3-a608-27452dd7f95c")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:17.939" endtime="20200626 23:11:17.951"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:17.951" endtime="20200626 23:11:17.965"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:17.882" endtime="20200626 23:11:17.965"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:18.313" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-93.png"&gt;&lt;img src="selenium-screenshot-93.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:17.966" endtime="20200626 23:11:18.313"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:18.313" endtime="20200626 23:11:20.414"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:17.965" endtime="20200626 23:11:20.414"></status>
+</kw>
+<tags>
+<tag>login_empty_username</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:11:12.855" endtime="20200626 23:11:20.414" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Login with empty credentials">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:11:20.418" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:11:20.417" endtime="20200626 23:11:25.844"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:20.417" endtime="20200626 23:11:25.845"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:25.846" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:25.846" endtime="20200626 23:11:26.584"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:26.586" level="INFO">Clicking button 'css:button[class='radius btn-login']'.</msg>
+<status status="PASS" starttime="20200626 23:11:26.585" endtime="20200626 23:11:27.042"></status>
+</kw>
+<kw name="Verify Login Error">
+<arguments>
+<arg>O usuário informado não está cadastrado!\n×</arg>
+</arguments>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:11:27.056" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="33597312553074a5c8613128164180a4", element="447cd290-3fed-4ccd-9bdf-e4a2be53c331")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:27.043" endtime="20200626 23:11:27.057"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:11:27.068" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="33597312553074a5c8613128164180a4", element="13dabcd7-d7b5-481e-b4af-3bfa145f69a5")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:27.057" endtime="20200626 23:11:27.068"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:27.068" endtime="20200626 23:11:27.082"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:27.082" endtime="20200626 23:11:27.096"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:27.043" endtime="20200626 23:11:27.096"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${login_error_message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20200626 23:11:27.107" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="33597312553074a5c8613128164180a4", element="a529daa0-4cce-4f9c-aa24-13e69c097492")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:27.096" endtime="20200626 23:11:27.107"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message.text}</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:27.107" endtime="20200626 23:11:27.119"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:27.042" endtime="20200626 23:11:27.119"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:27.461" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-94.png"&gt;&lt;img src="selenium-screenshot-94.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:27.120" endtime="20200626 23:11:27.461"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:27.462" endtime="20200626 23:11:29.546"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:27.120" endtime="20200626 23:11:29.546"></status>
+</kw>
+<tags>
+<tag>login_empty_credentials</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:11:20.416" endtime="20200626 23:11:29.547" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Checking Page Labels and Login Button strings">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:11:29.550" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:11:29.550" endtime="20200626 23:11:35.744"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:29.549" endtime="20200626 23:11:35.744"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:35.745" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:35.745" endtime="20200626 23:11:36.159"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${label_username}</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20200626 23:11:36.174" level="INFO">${username} = &lt;selenium.webdriver.remote.webelement.WebElement (session="258e34cb2a765ceb923d15365d4e6c07", element="636f41ce-e4ff-44cb-95e1-c17bb1540185")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:36.159" endtime="20200626 23:11:36.174"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${label_password}</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20200626 23:11:36.185" level="INFO">${password} = &lt;selenium.webdriver.remote.webelement.WebElement (session="258e34cb2a765ceb923d15365d4e6c07", element="81698727-8138-45d0-84f4-a53f95b7b49e")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:36.174" endtime="20200626 23:11:36.185"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${button_login}</arg>
+</arguments>
+<assign>
+<var>${login_button}</var>
+</assign>
+<msg timestamp="20200626 23:11:36.197" level="INFO">${login_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="258e34cb2a765ceb923d15365d4e6c07", element="863623c7-cd7a-4bce-9fcc-d2f1045e0271")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:36.186" endtime="20200626 23:11:36.197"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${username.text}</arg>
+<arg>Usuário</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:36.197" endtime="20200626 23:11:36.210"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${password.text}</arg>
+<arg>Senha</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:36.211" endtime="20200626 23:11:36.222"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${login_button.text}</arg>
+<arg>Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:36.223" endtime="20200626 23:11:36.236"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:36.590" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-95.png"&gt;&lt;img src="selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:36.237" endtime="20200626 23:11:36.590"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:36.590" endtime="20200626 23:11:38.674"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:36.237" endtime="20200626 23:11:38.674"></status>
+</kw>
+<tags>
+<tag>login_labels_button_strings</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:11:29.549" endtime="20200626 23:11:38.675" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Checking Page Title and Subtitle">
+<kw name="New Session" library="base_tests" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200626 23:11:38.678" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200626 23:11:38.677" endtime="20200626 23:11:43.770"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:38.677" endtime="20200626 23:11:43.771"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${page_url}</arg>
+</arguments>
+<msg timestamp="20200626 23:11:43.772" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200626 23:11:43.771" endtime="20200626 23:11:44.179"></status>
+</kw>
+<kw name="Verify Login Page">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_title}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200626 23:11:44.192" level="INFO">${title} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bd52ca70514d9d53d91d24fad2910e52", element="2e1e65b9-2934-4145-a9a7-61cdb410e3ae")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:44.180" endtime="20200626 23:11:44.192"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${page_subtitle}</arg>
+</arguments>
+<assign>
+<var>${subtitle}</var>
+</assign>
+<msg timestamp="20200626 23:11:44.203" level="INFO">${subtitle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bd52ca70514d9d53d91d24fad2910e52", element="32f1cfd4-52a2-45dd-a16c-2e485af9dc49")&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:44.192" endtime="20200626 23:11:44.203"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title.text}</arg>
+<arg>Formulário de Login</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:44.204" endtime="20200626 23:11:44.217"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle.text}</arg>
+<arg>Para acessar a área logada, digite stark para o usuário e jarvis! (tudo em caixa baixa) para a senha.\nSe os dados estiverem incorretos, você deverá ver as mensagens de erro.</arg>
+</arguments>
+<status status="PASS" starttime="20200626 23:11:44.217" endtime="20200626 23:11:44.231"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:44.180" endtime="20200626 23:11:44.231"></status>
+</kw>
+<kw name="Close Session" library="base_tests" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200626 23:11:44.584" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-96.png"&gt;&lt;img src="selenium-screenshot-96.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200626 23:11:44.232" endtime="20200626 23:11:44.584"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200626 23:11:44.584" endtime="20200626 23:11:46.735"></status>
+</kw>
+<status status="PASS" starttime="20200626 23:11:44.232" endtime="20200626 23:11:46.736"></status>
+</kw>
+<tags>
+<tag>login_title_subtitle</tag>
+</tags>
+<status status="PASS" starttime="20200626 23:11:38.677" endtime="20200626 23:11:46.737" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200626 23:10:39.516" endtime="20200626 23:11:46.746"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="8" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">login_empty_credentials</stat>
+<stat pass="1" fail="0">login_empty_password</stat>
+<stat pass="1" fail="0">login_empty_username</stat>
+<stat pass="1" fail="0">login_good_credentials</stat>
+<stat pass="1" fail="0">login_labels_button_strings</stat>
+<stat pass="1" fail="0">login_title_subtitle</stat>
+<stat pass="1" fail="0">login_wrong_password</stat>
+<stat pass="1" fail="0">login_wrong_username</stat>
+</tag>
+<suite>
+<stat pass="8" fail="0" id="s1" name="Login Test">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200626 23:11:12.853" level="WARN">Multiple test cases with name 'Login with empty password' executed in test suite 'Login Test'.</msg>
+</errors>
+</robot>
